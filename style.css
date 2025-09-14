@@ -1,0 +1,665 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+body {
+    font-family: Arial, sans-serif;
+}
+        
+        
+header {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+    color: white;
+}
+
+.logo{
+    width: 90px;
+    height: 90px;
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+        
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+        
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+        
+.titulo {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 73%;
+}
+        
+.titulo h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+}
+        
+#about {
+    padding: 20px 20px;
+}
+        
+.about-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+        
+.about-texto {
+    flex: 1;
+}
+        
+.about-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+        
+.about-texto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+        
+.about-texto p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+        
+.about-imagen {
+    flex: 1;
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+}
+        
+.about-imagen img {
+    width: 100%;
+    height: 150px;
+    background: #ddd;
+    object-fit: cover;
+}
+        
+.mision-vision {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+        
+.mision-imagen {
+    flex: 1;
+}
+        
+.mision-imagen img {
+    width: 100%;
+    height: 250px;
+    background: #ddd;
+    object-fit: cover;
+}
+        
+.mision-texto {
+    flex: 1;
+}
+        
+.mision, .vision {
+    margin-bottom: 30px;
+}
+        
+.mision h3, .vision h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+        
+.mision p, .vision p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+        
+#servicios {
+    padding: 5px 20px;
+}
+        
+.servicios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+        
+.servicios-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+        
+.servicios-container > p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+        
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+        
+.service-item {
+    padding: 20px;
+}
+        
+.service-number {
+    font-size: 1rem;
+    color: blue;
+    margin-bottom: 10px;
+}
+        
+.service-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+        
+.service-item p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+        
+        /* Sección de Planes */
+#planes {
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+}
+        
+.planes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+        
+.planes-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+        
+.planes-container > p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+        
+.tabla-planes {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin: 0 auto;
+}
+        
+.tabla-planes th, .tabla-planes td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+        
+.tabla-planes th {
+    background-color: #4A90E2;
+    color: white;
+    font-weight: bold;
+}
+        
+.precio {
+    font-weight: bold;
+    color: #4A90E2;
+    font-size: 1.2rem;
+}
+        
+.check {
+    color: green;
+    font-weight: bold;
+}
+        
+.no-disponible {
+    color: #ccc;
+}
+        
+        
+#contact {
+    padding: 50px 20px;
+}
+        
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+        
+.contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+        
+.contact-container > p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+        
+.formulario {
+    text-align: left;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+}
+        
+.campo {
+    margin-bottom: 20px;
+}
+        
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+        
+.campo input, .campo input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+        
+.boton-enviar {
+    background: #4A90E2;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+        
+.boton-enviar:hover {
+    background: #357ABD;
+}
+
+footer {
+    background-color: #35373a;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #4A90E2;
+}
+
+.footer-section p, .footer-section li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #bdc3c7;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.footer-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #4A90E2;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    text-decoration: none;
+}
+
+.links a:hover {
+    background-color: #357ABD;
+}
+
+.nav-secondary a{
+    color: #35373a;
+}
+
+.nav-secondary a:hover{
+    color: #921db5;
+}
+
+#faq {
+    padding: 10px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+        #faq h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            background: #4A90E2;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #357ABD;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            background: #f9f9f9;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 15px 20px;
+        }
+
+        /* Estilos Sección Nueva Pregunta*/
+        #nueva-pregunta {
+            padding: 20px 20px;
+            background: #f8f9fa;
+        }
+
+        #nueva-pregunta h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        #nueva-pregunta p {
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        #nueva-pregunta .formulario {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        #nueva-pregunta textarea {
+            width: 100%;
+            resize: vertical;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+/* Media queries para pantallas mas chicas */
+
+/* Tablets (768px y menos) */
+@media (max-width: 768px) {
+    /* Header y Navegación */
+    nav {
+        top: 10px;
+        right: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(0,0,0,0.7);
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .titulo h1 {
+        font-size: 3.5rem;
+    }
+    
+    /* Sección About */
+    .about-container {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+    
+    .mision-vision {
+        flex-direction: column;
+        margin: 30px auto;
+    }
+    
+    /* Servicios */
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Tabla de planes */
+    .tabla-planes {
+        font-size: 0.8rem;
+    }
+    
+    .tabla-planes th, .tabla-planes td {
+        padding: 10px 8px;
+    }
+    
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Preguntas */
+    .faq-question {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+}
+
+/* Móviles (480px y menos) */
+@media (max-width: 480px) {
+    /* Header */
+    nav {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+    
+    nav ul {
+        gap: 10px;
+        padding: 10px;
+    }
+    nav a {
+        font-size: 14px;
+    }
+    
+    .titulo {
+        transform: translateY(-50px);
+    }
+    
+    .titulo h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Secciones generales */
+    #about, #servicios, #planes, #contact, #faq, #nueva-pregunta {
+        padding: 30px 15px;
+    }
+    
+    .about-container, .mision-vision {
+        gap: 20px;
+    }
+    
+    .about-texto h2, .servicios-container h2, .planes-container h2, .contact-container h2 {
+        font-size: 1.6rem;
+    }
+    
+    /* Servicios  */
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .service-item {
+        padding: 15px;
+    }
+    
+    /* Tabla responsiva */
+    .tabla-planes {
+        font-size: 0.7rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .tabla-planes th, .tabla-planes td {
+        padding: 8px 5px;
+        min-width: 100px;
+    }
+    
+    /* Formularios */
+    .formulario {
+        padding: 20px;
+    }
+    
+    .campo input, .campo textarea {
+        font-size: 16px; 
+    }
+    
+    /* Footer  */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .links {
+        justify-content: center;
+    }
+    
+    /* Preguntas */
+    .faq-question {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+    
+    .faq-answer {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móviles muy pequeños (320px y menos) */
+@media (max-width: 320px) {
+    .titulo h1 {
+        font-size: 2rem;
+    }
+    
+    nav a {
+        font-size: 12px;
+    }
+    
+    .about-texto h2, .servicios-container h2 {
+        font-size: 1.4rem;
+    }
+    
+    .tabla-planes {
+        font-size: 0.6rem;
+    }
+    
+    .formulario {
+        padding: 15px;
+    }
+}
+
+/* Pantallas grandes (1200px y más) */
+@media (min-width: 1200px) {
+    .about-container, .mision-vision, .servicios-container, .planes-container, .contact-container {
+        max-width: 1400px;
+    }
+    
+    .titulo h1 {
+        font-size: 6rem;
+    }
+    
+    .servicios-grid {
+        gap: 40px;
+    }
+}
