@@ -483,6 +483,10 @@ footer {
         padding: 15px;
         border-radius: 8px;
     }
+
+    .nav-secondary a{
+    color: #949698;
+}
     
     .titulo h1 {
         font-size: 3.5rem;
