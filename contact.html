@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLAN</title>
-    <link rel="stylesheet" href="style.css" >
+    <title>KLAN - Únete</title>
+
+    <!-- Framework Materialize para diseño y componentes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Librería de íconos de Google para Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
-    <!-- Sección nav -->
-    <a href="index.html"><img class="logo" src="img/KLAN2.png" alt="logo"></a>
-    
-    <div class="nav-container">
-        <nav class="nav-secondary">
-            <ul>
+    <!-- Navbar responsivo -->
+    <nav class="nav-wrapper" style="background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);">
+        <div class="container">
+            <a href="index.html" class="brand-logo">
+                <img src="img/KLAN2.png" alt="logo" class="logo">
+            </a>
+            <!-- Botón del menú lateral para móviles -->
+            <a href="#" data-target="menu-responsive" class="sidenav-trigger right">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Sobre nosotros</a></li>
                 <li><a href="servicios.html">Nuestros servicios</a></li>
@@ -21,87 +36,145 @@
                 <li><a href="preguntas.html">Preguntas</a></li>
                 <li><a href="contact.html" style="color:darkviolet;">Únete</a></li>
             </ul>
-        </nav>
-    </div>
-    <!-- Seccion de formulario-->
-    <section id="contact">
+        </div>
+    </nav>
+
+    <!-- Menú lateral en móviles -->
+    <ul class="sidenav" id="menu-responsive">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Nuestros servicios</a></li>
+        <li><a href="planes.html">Planes</a></li>
+        <li><a href="preguntas.html">Preguntas</a></li>
+        <li><a href="contact.html">Únete</a></li>
+    </ul>
+
+    <!-- Sección de contacto -->
+    <section id="contact" class="container">
         <div class="contact-container">
-            <h2>Únete a KLAN</h2>
-            <p>¿Listo para transformar tu idea en realidad? Completa el formulario y comencemos a trabajar juntos.</p>
-            
-            <form class="formulario">
-                <div class="campo">
-                    <label for="nombre">Nombre completo *</label>
+            <h2 class="center-align">Únete a Nuestro Equipo</h2>
+            <p class="center-align">Completa el formulario y adjunta tu currículum para aplicar a nuestras vacantes.</p>
+
+            <!-- Formulario de contacto -->
+            <form id="form-contacto" class="formulario">
+                <div class="input-field">
                     <input type="text" id="nombre" name="nombre" required>
+                    <label for="nombre">Nombre completo *</label>
                 </div>
-                
-                <div class="campo">
-                    <label for="telefono">Teléfono *</label>
+
+                <div class="input-field">
                     <input type="tel" id="telefono" name="telefono" required>
+                    <label for="telefono">Teléfono *</label>
                 </div>
-                
-                <div class="campo">
-                    <label for="correo">Correo electrónico *</label>
+
+                <div class="input-field">
                     <input type="email" id="correo" name="correo" required>
+                    <label for="correo">Correo electrónico *</label>
                 </div>
-                
-                <div class="campo">
-                    <label for="archivo">Sube tu Curriculum Vitae (PDF)</label>
-                    <input type="file" id="archivo" name="archivo" accept=".pdf">
+
+                <div class="file-field input-field">
+                    <div class="btn" style="background-color:#4A90E2;">
+                        <span>Subir CV</span>
+                        <input type="file" id="cv" name="cv" required>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Selecciona tu archivo...">
+                    </div>
                 </div>
-                
-                <button type="submit" class="boton-enviar">Enviar Solicitud</button>
+
+                <!-- Botón que activa el modal -->
+                <button type="submit" class="btn waves-effect waves-light" style="width:100%; background-color:#4A90E2;">Enviar Solicitud</button>
             </form>
         </div>
     </section>
 
-</body>
-<!-- Seccion de footer-->
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3><b>KLAN</b></h3>
-            <p>Transformando ideas en soluciones tecnológicas innovadoras.</p>
-            <p>Tu socio confiable en desarrollo de software.</p>
-            <div class="links">
-                <a href="#" title="Facebook">f</a>
-                <a href="#" title="Twitter">t</a>
-                <a href="#" title="LinkedIn">in</a>
-                <a href="#" title="Instagram">ig</a>
+    <!-- Modal de confirmación -->
+    <div id="modal-confirmacion" class="modal">
+        <div class="modal-content center-align">
+            <h4>¡Solicitud enviada!</h4>
+            <p>Tu información ha sido recibida correctamente. Pronto nos pondremos en contacto contigo.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect btn-flat">Cerrar</a>
+        </div>
+    </div>
+
+    <!-- Footer original -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><b>KLAN</b></h3>
+                <p>Transformando ideas en soluciones tecnológicas innovadoras.</p>
+                <p>Tu socio confiable en desarrollo de software.</p>
+                <div class="links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">t</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="Instagram">ig</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="#servicios">Desarrollo Web</a></li>
+                    <li><a href="#servicios">Apps Móviles</a></li>
+                    <li><a href="#servicios">Software a Medida</a></li>
+                    <li><a href="#servicios">Consultoría</a></li>
+                    <li><a href="#servicios">Mantenimiento</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><img class="footer-icon" src="img/email-icon.png" alt="email-icon"> contacto@klan.com.mx</p>
+                <p><img class="footer-icon" src="img/telefono-icon.png" alt="phone-icon"> +52 (461) 123-4567</p>
+                <p><img class="footer-icon" src="img/ubicacion-icon.png" alt="location-icon"> Celaya, Guanajuato, México</p>
+                <p><img class="footer-icon" src="img/calendario-icon.png" alt="date-icon"> Lun - Vie: 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="planes.html">Nuestros Planes</a></li>
+                    <li><a href="contact.html">Únete</a></li>
+                </ul>
             </div>
         </div>
-        
-        <div class="footer-section">
-            <h3>Servicios</h3>
-            <ul>
-                <li><a href="#servicios">Desarrollo Web</a></li>
-                <li><a href="#servicios">Apps Móviles</a></li>
-                <li><a href="#servicios">Software a Medida</a></li>
-                <li><a href="#servicios">Consultoría</a></li>
-                <li><a href="#servicios">Mantenimiento</a></li>
-            </ul>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 KLAN. Todos los derechos reservados. | Sitio desarrollado por Cesar Martinez & Jose Leon</p>
         </div>
-        
-        <div class="footer-section">
-            <h3>Contacto</h3>
-            <p><img class="footer-icon" src="img/email-icon.png" alt="email-icon"> contacto@klan.com.mx</p>
-            <p><img class="footer-icon" src="img/telefono-icon.png" alt="phone-icon"> +52 (461) 123-4567</p>
-            <p><img class="footer-icon" src="img/ubicacion-icon.png" alt="location-icon"> Celaya, Guanajuato, México</p>
-            <p><img class="footer-icon" src="img/calendario-icon.png" alt="date-icon"> Lun - Vie: 9:00 AM - 6:00 PM</p>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Enlaces Útiles</h3>
-            <ul>
-                <li><a href="about.html">Sobre Nosotros</a></li>
-                <li><a href="planes.html">Nuestros Planes</a></li>
-                <li><a href="contact.html">Únete</a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2025 KLAN. Todos los derechos reservados. | Sitio desarrollado por Cesar Martinez & Jose Leon</p>
-    </div>
-</footer>
+    </footer>
+
+    <!-- Script de Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Script para inicializar los componentes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activo el menú lateral en móviles
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+
+            // Activo el modal de Materialize
+            var modal = document.querySelectorAll('.modal');
+            M.Modal.init(modal);
+
+            // Evento para mostrar el modal al enviar el formulario
+            const form = document.getElementById('form-contacto');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // evita que se recargue la página
+                const instancia = M.Modal.getInstance(document.getElementById('modal-confirmacion'));
+                instancia.open(); // abre el modal
+                form.reset(); // limpia el formulario
+            });
+
+            // Inicializa todo lo demás automáticamente
+            M.AutoInit();
+        });
+    </script>
+
+</body>
 </html>

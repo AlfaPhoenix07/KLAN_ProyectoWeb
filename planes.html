@@ -3,142 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLAN YETUS</title>
-    <link rel="stylesheet" href="style.css" >
+    <title>KLAN - Planes</title>
+
+    <!-- Framework Materialize para el diseño responsivo -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados del proyecto -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Librería de íconos de Google para Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
-    <!-- Sección nav -->
-    <a href="index.html"><img class="logo" src="img/KLAN2.png" alt="logo"></a>
-    
-    <div class="nav-container">
-        <nav class="nav-secondary">
-            <ul>
+    <!-- Navbar responsivo con Materialize -->
+    <nav class="nav-wrapper" style="background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);">
+        <div class="container">
+            <!-- Logo que lleva al inicio -->
+            <a href="index.html" class="brand-logo">
+                <img src="img/KLAN2.png" alt="logo" class="logo">
+            </a>
+
+            <!-- Botón del menú hamburguesa -->
+            <a href="#" data-target="menu-responsive" class="sidenav-trigger right">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <!-- Enlaces del menú principal -->
+            <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Sobre nosotros</a></li>
                 <li><a href="servicios.html">Nuestros servicios</a></li>
-                <li><a href="planes.html">Planes</a></li>
+                <li><a href="planes.html" style="color:darkviolet;">Planes</a></li>
                 <li><a href="preguntas.html">Preguntas</a></li>
-                <li><a href="contact.html" style="color:darkviolet;">Únete</a></li>
-            </ul>
-        </nav>
-    </div>
-    <!-- Tabla de planes -->
-    <section id="planes">
-        <div class="planes-container">
-            <h2>Nuestros Planes</h2>
-            <p>Elige el plan que mejor se adapte a las necesidades de tu proyecto:</p>
-            
-            <table class="tabla-planes">
-                <thead>
-                    <tr>
-                        <th>Características</th>
-                        <th>Básico</th>
-                        <th>Profesional</th>
-                        <th>Enterprise</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Desarrollo Web</strong></td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Aplicación Móvil</strong></td>
-                        <td class="no-disponible">-</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Base de Datos</strong></td>
-                        <td>Básica</td>
-                        <td>Avanzada</td>
-                        <td>Completa</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Soporte Técnico</strong></td>
-                        <td>Email</td>
-                        <td>Email + Chat</td>
-                        <td>24/7 Dedicado</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mantenimiento</strong></td>
-                        <td>3 meses</td>
-                        <td>6 meses</td>
-                        <td>12 meses</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Integraciones</strong></td>
-                        <td>2 básicas</td>
-                        <td>5 avanzadas</td>
-                        <td>Ilimitadas</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tiempo de Entrega</strong></td>
-                        <td>4-6 semanas</td>
-                        <td>6-8 semanas</td>
-                        <td>8-12 semanas</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Precio</strong></td>
-                        <td class="precio">$8,000 MXN</td>
-                        <td class="precio">$18,000 MXN</td>
-                        <td class="precio">$35,000 MXN</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-</body>
-
-<!-- Seccion footer -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3><b>KLAN</b></h3>
-            <p>Transformando ideas en soluciones tecnológicas innovadoras.</p>
-            <p>Tu socio confiable en desarrollo de software.</p>
-            <div class="links">
-                <a href="#" title="Facebook">f</a>
-                <a href="#" title="Twitter">t</a>
-                <a href="#" title="LinkedIn">in</a>
-                <a href="#" title="Instagram">ig</a>
-            </div>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Servicios</h3>
-            <ul>
-                <li><a href="#servicios">Desarrollo Web</a></li>
-                <li><a href="#servicios">Apps Móviles</a></li>
-                <li><a href="#servicios">Software a Medida</a></li>
-                <li><a href="#servicios">Consultoría</a></li>
-                <li><a href="#servicios">Mantenimiento</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Contacto</h3>
-            <p><img class="footer-icon" src="img/email-icon.png" alt="email-icon"> contacto@klan.com.mx</p>
-            <p><img class="footer-icon" src="img/telefono-icon.png" alt="phone-icon"> +52 (461) 123-4567</p>
-            <p><img class="footer-icon" src="img/ubicacion-icon.png" alt="location-icon"> Celaya, Guanajuato, México</p>
-            <p><img class="footer-icon" src="img/calendario-icon.png" alt="date-icon"> Lun - Vie: 9:00 AM - 6:00 PM</p>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Enlaces Útiles</h3>
-            <ul>
-                <li><a href="about.html">Sobre Nosotros</a></li>
-                <li><a href="planes.html">Nuestros Planes</a></li>
                 <li><a href="contact.html">Únete</a></li>
             </ul>
         </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2025 KLAN. Todos los derechos reservados. | Sitio desarrollado por Cesar Martinez & Jose Leon</p>
-    </div>
-</footer>
+    </nav>
+
+    <!-- Menú lateral (para móviles) -->
+    <ul class="sidenav" id="menu-responsive">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Nuestros servicios</a></li>
+        <li><a href="planes.html">Planes</a></li>
+        <li><a href="preguntas.html">Preguntas</a></li>
+        <li><a href="contact.html">Únete</a></li>
+    </ul>
+
+    <!-- Sección de planes -->
+    <section id="planes" class="container">
+        <div class="planes-container">
+            <h2 class="center-align">Nuestros Planes</h2>
+            <p class="center-align">Elige el plan que mejor se adapte a las necesidades de tu proyecto:</p>
+
+            <!-- Tabla con el estilo de Materialize -->
+            <div class="responsive-table">
+                <table class="highlight centered">
+                    <thead class="blue lighten-2 white-text">
+                        <tr>
+                            <th>Características</th>
+                            <th>Básico</th>
+                            <th>Profesional</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Desarrollo Web</b></td><td>✓</td><td>✓</td><td>✓</td></tr>
+                        <tr><td><b>Aplicación Móvil</b></td><td>-</td><td>✓</td><td>✓</td></tr>
+                        <tr><td><b>Base de Datos</b></td><td>Básica</td><td>Avanzada</td><td>Completa</td></tr>
+                        <tr><td><b>Soporte Técnico</b></td><td>Email</td><td>Email + Chat</td><td>24/7 Dedicado</td></tr>
+                        <tr><td><b>Mantenimiento</b></td><td>3 meses</td><td>6 meses</td><td>12 meses</td></tr>
+                        <tr><td><b>Integraciones</b></td><td>2 básicas</td><td>5 avanzadas</td><td>Ilimitadas</td></tr>
+                        <tr><td><b>Tiempo de Entrega</b></td><td>4-6 semanas</td><td>6-8 semanas</td><td>8-12 semanas</td></tr>
+                        <tr><td><b>Precio</b></td><td class="precio">$8,000 MXN</td><td class="precio">$18,000 MXN</td><td class="precio">$35,000 MXN</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pequeña nota explicativa -->
+            <div class="center-align" style="margin-top: 20px;">
+                <p><i class="material-icons tiny">info</i> Todos nuestros planes incluyen actualizaciones menores sin costo adicional durante el periodo de soporte.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (sin modificaciones) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><b>KLAN</b></h3>
+                <p>Transformando ideas en soluciones tecnológicas innovadoras.</p>
+                <p>Tu socio confiable en desarrollo de software.</p>
+                <div class="links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">t</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="Instagram">ig</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="#servicios">Desarrollo Web</a></li>
+                    <li><a href="#servicios">Apps Móviles</a></li>
+                    <li><a href="#servicios">Software a Medida</a></li>
+                    <li><a href="#servicios">Consultoría</a></li>
+                    <li><a href="#servicios">Mantenimiento</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><img class="footer-icon" src="img/email-icon.png" alt="email-icon"> contacto@klan.com.mx</p>
+                <p><img class="footer-icon" src="img/telefono-icon.png" alt="phone-icon"> +52 (461) 123-4567</p>
+                <p><img class="footer-icon" src="img/ubicacion-icon.png" alt="location-icon"> Celaya, Guanajuato, México</p>
+                <p><img class="footer-icon" src="img/calendario-icon.png" alt="date-icon"> Lun - Vie: 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="planes.html">Nuestros Planes</a></li>
+                    <li><a href="contact.html">Únete</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 KLAN. Todos los derechos reservados. | Sitio desarrollado por Cesar Martinez & Jose Leon</p>
+        </div>
+    </footer>
+
+    <!-- Script de Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Inicialización de componentes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa el menú lateral (sidenav)
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+
+            // Inicializa los componentes automáticos de Materialize
+            M.AutoInit();
+        });
+    </script>
+
+</body>
 </html>

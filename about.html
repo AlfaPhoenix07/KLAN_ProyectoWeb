@@ -3,107 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLAN</title>
-    <link rel="stylesheet" href="style.css" >
+    <title>KLAN - Sobre Nosotros</title>
+
+    <!-- Agrego Materialize para poder usar su navbar y el sistema de grid -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+    <!-- Archivo de estilos del proyecto (colores y estructura personalizada) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Librería de íconos de Google para Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
-    <!-- Sección nav -->
-    <a href="index.html"><img class="logo" src="img/KLAN2.png" alt="logo"></a>
+    <!-- Navbar responsivo de Materialize -->
+    <nav class="nav-wrapper" style="background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);">
+        <div class="container">
+            <!-- Logo que lleva al inicio -->
+            <a href="index.html" class="brand-logo">
+                <img src="img/KLAN2.png" alt="logo" class="logo">
+            </a>
 
-    <div class="nav-container">
-        <nav class="nav-secondary">
-            <ul>
+            <!-- Botón de menú para móviles -->
+            <a href="#" data-target="menu-responsive" class="sidenav-trigger right">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <!-- Enlaces del menú -->
+            <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Sobre nosotros</a></li>
+                <li><a href="about.html" style="color:darkviolet;">Sobre nosotros</a></li>
                 <li><a href="servicios.html">Nuestros servicios</a></li>
                 <li><a href="planes.html">Planes</a></li>
                 <li><a href="preguntas.html">Preguntas</a></li>
-                <li><a href="contact.html" style="color:darkviolet;">Únete</a></li>
+                <li><a href="contact.html">Únete</a></li>
             </ul>
-        </nav>
-    </div>
-    <!-- Seccion de informacion-->
-    <section id="about">
-        <div class="about-container">
-            <div class="about-texto">
-                <h2>Sobre Nosotros</h2>
-                <h3>¿Quienes somos?</h3>
-                <p>En KLAN, creemos en el poder de la tecnología para impulsar el crecimiento y la eficiencia. Fundada en 2015, nuestra empresa se ha consolidado como un referente en el desarrollo de software personalizado, gracias a un equipo de profesionales apasionados por la tecnología y comprometidos con la excelencia.</p>
+        </div>
+    </nav>
+
+    <!-- Menú lateral (solo visible en pantallas pequeñas) -->
+    <ul class="sidenav" id="menu-responsive">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Nuestros servicios</a></li>
+        <li><a href="planes.html">Planes</a></li>
+        <li><a href="preguntas.html">Preguntas</a></li>
+        <li><a href="contact.html">Únete</a></li>
+    </ul>
+
+    <!-- Contenido principal -->
+    <section id="about" class="container">
+        <div class="row">
+            <!-- Columna del texto -->
+            <div class="col s12 m6">
+                <div class="about-texto">
+                    <h2>Sobre Nosotros</h2>
+                    <h3>¿Quiénes somos?</h3>
+                    <p>En KLAN, creemos en el poder de la tecnología para impulsar el crecimiento y la eficiencia. Fundada en 2015, nuestra empresa se ha consolidado como un referente en el desarrollo de software personalizado, gracias a un equipo de profesionales apasionados por la tecnología y comprometidos con la excelencia.</p>
+                </div>
             </div>
-            
-            <div class="about-imagen">
-                <img src="https://cdn-3.expansion.mx/dims4/default/0fa6a34/2147483647/strip/true/crop/1254x836+0+0/resize/1800x1200!/format/webp/quality/80/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F6e%2F11%2F637687f94bbeb55715f3baf030cb%2Fregreso-oficina.jpg" alt="Profesional trabajando en computadora">
-                <img src="https://mueblesdeoficina1.com/wp-content/uploads/2024/07/el-mobiliario-de-oficina-ideal-para-coworking.jpg" alt="Oficina moderna">
+
+            <!-- Columna con imágenes -->
+            <div class="col s12 m6">
+                <div class="about-imagen">
+                    <img src="https://cdn-3.expansion.mx/dims4/default/0fa6a34/2147483647/strip/true/crop/1254x836+0+0/resize/1800x1200!/format/webp/quality/80/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F6e%2F11%2F637687f94bbeb55715f3baf030cb%2Fregreso-oficina.jpg" alt="Profesional trabajando en computadora">
+                    <img src="https://mueblesdeoficina1.com/wp-content/uploads/2024/07/el-mobiliario-de-oficina-ideal-para-coworking.jpg" alt="Oficina moderna">
+                </div>
             </div>
         </div>
-        
-        <div class="mision-vision">
-            <div class="mision-imagen">
-                <img src="https://gesab.com/wp-content/uploads/2023/08/Meeting-room-Guide-GESAB-10.webp" alt="Sala de reuniones moderna">
+
+        <!-- Sección de misión y visión -->
+        <div class="row mision-vision">
+            <!-- Imagen lateral -->
+            <div class="col s12 m6">
+                <div class="mision-imagen">
+                    <img src="https://gesab.com/wp-content/uploads/2023/08/Meeting-room-Guide-GESAB-10.webp" alt="Sala de reuniones moderna">
+                </div>
             </div>
-            
-            <div class="mision-texto">
+
+            <!-- Texto de misión y visión -->
+            <div class="col s12 m6 mision-texto">
                 <div class="mision">
-                    <h3>Nuestra Misión.</h3>
+                    <h3>Nuestra Misión</h3>
                     <p>Proporcionar soluciones tecnológicas innovadoras y escalables que impulsen el éxito de nuestros clientes.</p>
                 </div>
-                
+
                 <div class="vision">
-                    <h3>Nuestra Visión.</h3>
+                    <h3>Nuestra Visión</h3>
                     <p>Ser líderes en el diseño y desarrollo de software, reconocidos por nuestra creatividad, calidad y compromiso con la satisfacción del cliente.</p>
                 </div>
             </div>
         </div>
     </section>
 
-</body>
-<!-- Seccion de footer-->
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3><b>KLAN</b></h3>
-            <p>Transformando ideas en soluciones tecnológicas innovadoras.</p>
-            <p>Tu socio confiable en desarrollo de software.</p>
-            <div class="links">
-                <a href="#" title="Facebook">f</a>
-                <a href="#" title="Twitter">t</a>
-                <a href="#" title="LinkedIn">in</a>
-                <a href="#" title="Instagram">ig</a>
+    <!-- Footer original (no se modificó nada) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><b>KLAN</b></h3>
+                <p>Transformando ideas en soluciones tecnológicas innovadoras.</p>
+                <p>Tu socio confiable en desarrollo de software.</p>
+                <div class="links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">t</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="Instagram">ig</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="#servicios">Desarrollo Web</a></li>
+                    <li><a href="#servicios">Apps Móviles</a></li>
+                    <li><a href="#servicios">Software a Medida</a></li>
+                    <li><a href="#servicios">Consultoría</a></li>
+                    <li><a href="#servicios">Mantenimiento</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><img class="footer-icon" src="img/email-icon.png" alt="email-icon"> contacto@klan.com.mx</p>
+                <p><img class="footer-icon" src="img/telefono-icon.png" alt="phone-icon"> +52 (461) 123-4567</p>
+                <p><img class="footer-icon" src="img/ubicacion-icon.png" alt="location-icon"> Celaya, Guanajuato, México</p>
+                <p><img class="footer-icon" src="img/calendario-icon.png" alt="date-icon"> Lun - Vie: 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="planes.html">Nuestros Planes</a></li>
+                    <li><a href="contact.html">Únete</a></li>
+                </ul>
             </div>
         </div>
-        
-        <div class="footer-section">
-            <h3>Servicios</h3>
-            <ul>
-                <li><a href="#servicios">Desarrollo Web</a></li>
-                <li><a href="#servicios">Apps Móviles</a></li>
-                <li><a href="#servicios">Software a Medida</a></li>
-                <li><a href="#servicios">Consultoría</a></li>
-                <li><a href="#servicios">Mantenimiento</a></li>
-            </ul>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 KLAN. Todos los derechos reservados. | Sitio desarrollado por Cesar Martinez & Jose Leon</p>
         </div>
-        
-        <div class="footer-section">
-            <h3>Contacto</h3>
-            <p><img class="footer-icon" src="img/email-icon.png" alt="email-icon"> contacto@klan.com.mx</p>
-            <p><img class="footer-icon" src="img/telefono-icon.png" alt="phone-icon"> +52 (461) 123-4567</p>
-            <p><img class="footer-icon" src="img/ubicacion-icon.png" alt="location-icon"> Celaya, Guanajuato, México</p>
-            <p><img class="footer-icon" src="img/calendario-icon.png" alt="date-icon"> Lun - Vie: 9:00 AM - 6:00 PM</p>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Enlaces Útiles</h3>
-            <ul>
-                <li><a href="about.html">Sobre Nosotros</a></li>
-                <li><a href="planes.html">Nuestros Planes</a></li>
-                <li><a href="contact.html">Únete</a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2025 KLAN. Todos los derechos reservados. | Sitio desarrollado por Cesar Martinez & Jose Leon</p>
-    </div>
-</footer>
+    </footer>
+
+    <!-- Scripts de Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Inicialización de los componentes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activo el menú lateral para móviles
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+
+            // Inicializo el resto de componentes automáticos de Materialize
+            M.AutoInit();
+        });
+    </script>
+
+</body>
 </html>

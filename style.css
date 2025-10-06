@@ -667,3 +667,119 @@ footer {
         gap: 40px;
     }
 }
+/* ==================================== */
+/* CORRECCIÓN FINAL NAVBAR Y ESPACIADO */
+/* ==================================== */
+
+/* Navbar fija, sin líneas blancas ni sombras */
+nav.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border: none !important;
+  box-shadow: none !important;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+}
+
+/* Evita la pseudo-línea de Materialize */
+nav::after {
+  content: none !important;
+}
+
+/* Ajusta el contenido para que no quede tapado */
+body {
+  margin: 0;
+  padding-top: 90px; /* espacio exacto debajo del navbar */
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+}
+
+/* Ajusta el logo dentro del nav */
+nav .brand-logo img {
+  height: 70px;
+  margin-top: 5px;
+  vertical-align: middle;
+}
+
+/* El header mantiene su alineación vertical centrada */
+header .titulo {
+  padding-top: 30px;
+}
+
+/* ==================================== */
+/* Estilo mejorado para "Nuestros Servicios" */
+/* ==================================== */
+
+#servicios {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* Cada tarjeta tiene más espacio y altura flexible */
+#servicios .card {
+  min-height: 260px;
+  padding: 10px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Aumenta el tamaño del título y mejora la lectura */
+#servicios .card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Párrafo más legible y centrado */
+#servicios .card-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #222;
+  text-align: justify;
+}
+
+/* Alinea las tarjetas en el centro del grid */
+#servicios .col {
+  display: flex;
+  justify-content: center;
+}
+
+/* Efecto hover sutil para resaltar cada servicio */
+#servicios .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#servicios .card {
+  height: auto !important;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Asegura que el texto no se oculte */
+#servicios .card-content {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+/* Espaciado y legibilidad del texto */
+#servicios .card-content p {
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Ajuste del título dentro de la tarjeta */
+#servicios .card-title {
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}

@@ -4,116 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KLAN</title>
-    <link rel="stylesheet" href="style.css" >
+
+    <!-- Framework Materialize para diseño responsivo -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+    <!-- Librería de íconos (para el menú hamburguesa y demás iconos) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Ajustes generales del navbar */
+        nav.nav-wrapper {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: none; /* quita línea gris inferior */
+        }
+
+        /* Alineo y escalo el logo */
+        nav .brand-logo img {
+            height: 70px;
+            margin-top: 5px;
+            vertical-align: middle;
+        }
+
+        /* Dejo espacio debajo del navbar fijo */
+        header {
+            margin-top: 90px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Sección Header -->
-    <header>
-        <a href="index.html"><img class="logo" src="img/KLAN2.png" alt="logo"></a>
-        <nav>
-            <ul>
+    <!-- Navbar responsivo de Materialize -->
+    <nav class="nav-wrapper" style="background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="brand-logo">
+                <img src="img/KLAN2.png" alt="logo">
+            </a>
+
+            <!-- Botón del menú hamburguesa (visible en pantallas pequeñas) -->
+            <a href="#" data-target="menu-responsive" class="sidenav-trigger right">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <!-- Enlaces principales -->
+            <ul class="right hide-on-med-and-down">
                 <li><a href="about.html">Sobre nosotros</a></li>
                 <li><a href="servicios.html">Nuestros servicios</a></li>
                 <li><a href="planes.html">Planes</a></li>
                 <li><a href="preguntas.html">Preguntas</a></li>
                 <li><a href="contact.html" style="color:darkviolet;">Únete</a></li>
             </ul>
-        </nav>
-        
+        </div>
+    </nav>
+
+    <!-- Menú lateral (para dispositivos móviles) -->
+    <ul class="sidenav" id="menu-responsive">
+        <li><a href="about.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Nuestros servicios</a></li>
+        <li><a href="planes.html">Planes</a></li>
+        <li><a href="preguntas.html">Preguntas</a></li>
+        <li><a href="contact.html">Únete</a></li>
+    </ul>
+
+    <!-- Encabezado principal -->
+    <header>
         <div class="titulo">
             <h1>ÚNETE<br>A<br>KLAN</h1>
         </div>
     </header>
 
-    <!-- Seccion de about-->
+    <!-- Sección de "Sobre Nosotros" -->
     <section id="about">
         <div class="about-container">
             <div class="about-texto">
                 <h2>Sobre Nosotros</h2>
-                <h3>¿Quienes somos?</h3>
+                <h3>¿Quiénes somos?</h3>
                 <p>En KLAN, creemos en el poder de la tecnología para impulsar el crecimiento y la eficiencia. Fundada en 2015, nuestra empresa se ha consolidado como un referente en el desarrollo de software personalizado, gracias a un equipo de profesionales apasionados por la tecnología y comprometidos con la excelencia.</p>
             </div>
-            
+
             <div class="about-imagen">
                 <img src="https://cdn-3.expansion.mx/dims4/default/0fa6a34/2147483647/strip/true/crop/1254x836+0+0/resize/1800x1200!/format/webp/quality/80/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F6e%2F11%2F637687f94bbeb55715f3baf030cb%2Fregreso-oficina.jpg" alt="Profesional trabajando en computadora">
                 <img src="https://mueblesdeoficina1.com/wp-content/uploads/2024/07/el-mobiliario-de-oficina-ideal-para-coworking.jpg" alt="Oficina moderna">
             </div>
         </div>
-        
-        <div class="mision-vision">
-            <div class="mision-imagen">
-                <img src="https://gesab.com/wp-content/uploads/2023/08/Meeting-room-Guide-GESAB-10.webp" alt="Sala de reuniones moderna">
-            </div>
-            
-            <div class="mision-texto">
-                <div class="mision">
-                    <h3>Nuestra Misión.</h3>
-                    <p>Proporcionar soluciones tecnológicas innovadoras y escalables que impulsen el éxito de nuestros clientes.</p>
+    </section>
+
+    <!-- Sección de servicios -->
+    <section id="servicios" class="container">
+        <h2 class="center-align">Nuestros Servicios</h2>
+        <p class="center-align">En KLAN, ofrecemos una amplia gama de servicios para cubrir todas tus necesidades tecnológicas:</p>
+
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">01 - Desarrollo de Software a Medida</span>
+                        <p>Creamos soluciones personalizadas que se adaptan a los procesos únicos de tu negocio.</p>
+                    </div>
                 </div>
-                
-                <div class="vision">
-                    <h3>Nuestra Visión.</h3>
-                    <p>Ser líderes en el diseño y desarrollo de software, reconocidos por nuestra creatividad, calidad y compromiso con la satisfacción del cliente.</p>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">02 - Aplicaciones Móviles</span>
+                        <p>Diseñamos y desarrollamos apps intuitivas para iOS y Android.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">03 - Aplicaciones Web</span>
+                        <p>Construimos aplicaciones web modernas, seguras y escalables.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seccion de servicios -->
-    <section id="servicios">
-        <div class="servicios-container">
-            <h2>Nuestros Servicios</h2>
-            <p>En KLAN, ofrecemos una amplia gama de servicios para cubrir todas tus necesidades tecnológicas:</p>
-            
-            <div class="servicios-grid">
-                <div class="service-item">
-                    <div class="service-number">01</div>
-                    <h3>Desarrollo de Software a Medida</h3>
-                    <p>Creamos soluciones personalizadas que se adaptan a los procesos únicos de tu negocio. Desde sistemas de gestión hasta herramientas específicas.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-number">02</div>
-                    <h3>Desarrollo de Aplicaciones Móviles</h3>
-                    <p>Diseñamos y desarrollamos aplicaciones móviles intuitivas para iOS y Android, garantizando una experiencia de usuario excepcional.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-number">03</div>
-                    <h3>Desarrollo de Aplicaciones Web</h3>
-                    <p>Construimos aplicaciones web modernas, escalables y seguras, utilizando las últimas tecnologías para garantizar un rendimiento óptimo.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-number">04</div>
-                    <h3>Consultoría Tecnológica</h3>
-                    <p>Te ayudamos a identificar mejoras y a implementar soluciones tecnológicas que impulsen tu competitividad.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-number">05</div>
-                    <h3>Integración de Sistemas</h3>
-                    <p>Conectamos tus sistemas existentes para mejorar la eficiencia y la comunicación entre diferentes áreas del negocio.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-number">06</div>
-                    <h3>Mantenimiento y Soporte</h3>
-                    <p>Ofrecemos servicios de mantenimiento continuo y soporte técnico para garantizar que tus sistemas funcionen sin problemas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Sección de planes -->
+    <section id="planes" class="container">
+        <h2 class="center-align">Nuestros Planes</h2>
+        <p class="center-align">Elige el plan que mejor se adapte a las necesidades de tu proyecto:</p>
 
-    <!-- Tabla de planes -->
-    <section id="planes">
-        <div class="planes-container">
-            <h2>Nuestros Planes</h2>
-            <p>Elige el plan que mejor se adapte a las necesidades de tu proyecto:</p>
-            
-            <table class="tabla-planes">
-                <thead>
+        <div class="responsive-table">
+            <table class="highlight centered">
+                <thead class="blue lighten-2 white-text">
                     <tr>
                         <th>Características</th>
                         <th>Básico</th>
@@ -122,199 +146,102 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>Desarrollo Web</strong></td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Aplicación Móvil</strong></td>
-                        <td class="no-disponible">-</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Base de Datos</strong></td>
-                        <td>Básica</td>
-                        <td>Avanzada</td>
-                        <td>Completa</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Soporte Técnico</strong></td>
-                        <td>Email</td>
-                        <td>Email + Chat</td>
-                        <td>24/7 Dedicado</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mantenimiento</strong></td>
-                        <td>3 meses</td>
-                        <td>6 meses</td>
-                        <td>12 meses</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Integraciones</strong></td>
-                        <td>2 básicas</td>
-                        <td>5 avanzadas</td>
-                        <td>Ilimitadas</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tiempo de Entrega</strong></td>
-                        <td>4-6 semanas</td>
-                        <td>6-8 semanas</td>
-                        <td>8-12 semanas</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Precio</strong></td>
-                        <td class="precio">$8,000 MXN</td>
-                        <td class="precio">$18,000 MXN</td>
-                        <td class="precio">$35,000 MXN</td>
-                    </tr>
+                    <tr><td>Desarrollo Web</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                    <tr><td>Aplicación Móvil</td><td>-</td><td>✓</td><td>✓</td></tr>
+                    <tr><td>Base de Datos</td><td>Básica</td><td>Avanzada</td><td>Completa</td></tr>
+                    <tr><td>Soporte Técnico</td><td>Email</td><td>Email + Chat</td><td>24/7 Dedicado</td></tr>
+                    <tr><td>Mantenimiento</td><td>3 meses</td><td>6 meses</td><td>12 meses</td></tr>
+                    <tr><td>Integraciones</td><td>2 básicas</td><td>5 avanzadas</td><td>Ilimitadas</td></tr>
+                    <tr><td>Tiempo de Entrega</td><td>4-6 semanas</td><td>6-8 semanas</td><td>8-12 semanas</td></tr>
+                    <tr><td><b>Precio</b></td><td>$8,000 MXN</td><td>$18,000 MXN</td><td>$35,000 MXN</td></tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <!-- Seccion de Preguntas-->
-    <section id="faq">
-        <h2>Resolvemos tus dudas</h2>
-
-        <div class="faq-item">
-            <div class="faq-question">¿Qué tipo de proyectos desarrollan?</div>
-            <div class="faq-answer">
-                <p>Trabajamos en desarrollo web, aplicaciones móviles, integración de sistemas y consultoría tecnológica.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">¿Cuánto tiempo tarda un proyecto?</div>
-            <div class="faq-answer">
-                <p>Depende del plan elegido: desde 4 semanas (básico) hasta 12 semanas (enterprise).</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">¿Ofrecen soporte después de entregar el proyecto?</div>
-            <div class="faq-answer">
-                <p>Sí, nuestros planes incluyen soporte y mantenimiento entre 3 y 12 meses.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">¿Cómo puedo contratar un servicio?</div>
-            <div class="faq-answer">
-                <p>Completa el formulario en la sección de <a href="contacto.html">Contacto</a> y nos pondremos en comunicación contigo.</p>
-            </div>
-        </div>
+    <!-- Sección de preguntas -->
+    <section id="faq" class="container">
+        <h2 class="center-align">Resolvemos tus dudas</h2>
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">help_outline</i>¿Qué tipo de proyectos desarrollan?</div>
+                <div class="collapsible-body"><p>Trabajamos en desarrollo web, aplicaciones móviles, integración de sistemas y consultoría tecnológica.</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">schedule</i>¿Cuánto tiempo tarda un proyecto?</div>
+                <div class="collapsible-body"><p>Depende del plan elegido: desde 4 semanas (básico) hasta 12 semanas (enterprise).</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">build</i>¿Ofrecen soporte después de entregar el proyecto?</div>
+                <div class="collapsible-body"><p>Sí, nuestros planes incluyen soporte y mantenimiento entre 3 y 12 meses.</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">contact_mail</i>¿Cómo puedo contratar un servicio?</div>
+                <div class="collapsible-body"><p>Completa el formulario en la sección de <a href="contact.html">Contacto</a> y nos pondremos en comunicación contigo.</p></div>
+            </li>
+        </ul>
     </section>
 
-    <!--  Nuevas Preguntas -->
-    <section id="nueva-pregunta">
-        <div class="contact-container">
-            <h2>¿Tienes otra pregunta?</h2>
-            <p>Envíanos tu duda y la responderemos lo antes posible.</p>
-
-            <form class="formulario">
-                <div class="campo">
-                    <label for="nombre">Tu nombre *</label>
-                    <input type="text" id="nombre" name="nombre" required>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><b>KLAN</b></h3>
+                <p>Transformando ideas en soluciones tecnológicas innovadoras.</p>
+                <p>Tu socio confiable en desarrollo de software.</p>
+                <div class="links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">t</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="Instagram">ig</a>
                 </div>
+            </div>
 
-                <div class="campo">
-                    <label for="correo">Tu correo electrónico *</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div>
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="#servicios">Desarrollo Web</a></li>
+                    <li><a href="#servicios">Apps Móviles</a></li>
+                    <li><a href="#servicios">Software a Medida</a></li>
+                    <li><a href="#servicios">Consultoría</a></li>
+                    <li><a href="#servicios">Mantenimiento</a></li>
+                </ul>
+            </div>
 
-                <div class="campo">
-                    <label for="pregunta">Escribe tu pregunta *</label>
-                    <textarea id="pregunta" name="pregunta" rows="5" required></textarea>
-                </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><img class="footer-icon" src="img/email-icon.png" alt="email-icon"> contacto@klan.com.mx</p>
+                <p><img class="footer-icon" src="img/telefono-icon.png" alt="phone-icon"> +52 (461) 123-4567</p>
+                <p><img class="footer-icon" src="img/ubicacion-icon.png" alt="location-icon"> Celaya, Guanajuato, México</p>
+                <p><img class="footer-icon" src="img/calendario-icon.png" alt="date-icon"> Lun - Vie: 9:00 AM - 6:00 PM</p>
+            </div>
 
-                <button type="submit" class="boton-enviar">Enviar Pregunta</button>
-            </form>
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="planes.html">Nuestros Planes</a></li>
+                    <li><a href="contact.html">Únete</a></li>
+                </ul>
+            </div>
         </div>
-    </section>
 
-    <!-- Seccion de formulario de contacto-->
-    <section id="contact">
-        <div class="contact-container">
-            <h2>Únete a KLAN</h2>
-            <p>¿Listo para transformar tu idea en realidad? Completa el formulario y comencemos a trabajar juntos.</p>
-            
-            <form class="formulario">
-                <div class="campo">
-                    <label for="nombre">Nombre completo *</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                
-                <div class="campo">
-                    <label for="telefono">Teléfono *</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
-                
-                <div class="campo">
-                    <label for="correo">Correo electrónico *</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div>
-                
-                <div class="campo">
-                    <label for="archivo">Sube tu Curriculum Vitae (PDF)</label>
-                    <input type="file" id="archivo" name="archivo" accept=".pdf">
-                </div>
-                
-                <button type="submit" class="boton-enviar">Enviar Solicitud</button>
-            </form>
+        <div class="footer-bottom">
+            <p>&copy; 2025 KLAN. Todos los derechos reservados. | Sitio desarrollado por Cesar Martinez & Jose Leon</p>
         </div>
-    </section>
+    </footer>
 
+    <!-- Script de Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Inicialización -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+            var colapsables = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(colapsables);
+        });
+    </script>
 </body>
-
-<!-- Seccion de footer -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3><b>KLAN</b></h3>
-            <p>Transformando ideas en soluciones tecnológicas innovadoras.</p>
-            <p>Tu socio confiable en desarrollo de software.</p>
-            <div class="links">
-                <a href="#" title="Facebook">f</a>
-                <a href="#" title="Twitter">t</a>
-                <a href="#" title="LinkedIn">in</a>
-                <a href="#" title="Instagram">ig</a>
-            </div>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Servicios</h3>
-            <ul>
-                <li><a href="#servicios">Desarrollo Web</a></li>
-                <li><a href="#servicios">Apps Móviles</a></li>
-                <li><a href="#servicios">Software a Medida</a></li>
-                <li><a href="#servicios">Consultoría</a></li>
-                <li><a href="#servicios">Mantenimiento</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Contacto</h3>
-            <p><img class="footer-icon" src="img/email-icon.png" alt="email-icon"> contacto@klan.com.mx</p>
-            <p><img class="footer-icon" src="img/telefono-icon.png" alt="phone-icon"> +52 (461) 123-4567</p>
-            <p><img class="footer-icon" src="img/ubicacion-icon.png" alt="location-icon"> Celaya, Guanajuato, México</p>
-            <p><img class="footer-icon" src="img/calendario-icon.png" alt="date-icon"> Lun - Vie: 9:00 AM - 6:00 PM</p>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Enlaces Útiles</h3>
-            <ul>
-                <li><a href="about.html">Sobre Nosotros</a></li>
-                <li><a href="planes.html">Nuestros Planes</a></li>
-                <li><a href="contact.html">Únete</a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2025 KLAN. Todos los derechos reservados. | Sitio desarrollado por Cesar Martinez & Jose Leon</p>
-    </div>
-</footer>
 </html>
