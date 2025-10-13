@@ -1,6 +1,5 @@
-/* ============================================ */
-/* ESTILOS GENERALES */
-/* ============================================ */
+
+/* ---------------> ESTILOS GENERALES <--------------- */
 
 * {
     margin: 0;
@@ -12,9 +11,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* ============================================ */
-/* HEADER CON IMAGEN DESENFOCADA */
-/* ============================================ */
+
+/* ---------------> HEADER CON IMAGEN DESENFOCADA  <-------------------*/
 
 header {
     position: relative;
@@ -51,9 +49,9 @@ header::before {
     line-height: 1.2;
 }
 
-/* ============================================ */
-/* NAVBAR */
-/* ============================================ */
+
+/* -----------------> NAVBAR <-------------------- */
+
 
 nav.nav-wrapper {
     position: fixed;
@@ -63,30 +61,51 @@ nav.nav-wrapper {
     z-index: 1000;
     border: none !important;
     box-shadow: none !important;
-    background-color: #35373a;
+    background-color: rgba(53, 55, 58, 0.95) !important;
+    transition: all 0.3s ease;
 }
 
+/* Navbar transparente solo en index.html */
+body.index-page nav.nav-wrapper {
+    background: transparent !important;
+}
+
+/* Navbar con fondo al hacer scroll */
+body.index-page nav.nav-wrapper.scrolled {
+    background-color: rgba(53, 55, 58, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
 nav::after {
     content: none !important;
 }
 
 nav .brand-logo img {
     height: 70px;
-    margin-top: 5px;
+    margin-top: 0;
     vertical-align: middle;
 }
 
 .logo {
-    width: 90px;
+    width: 95px;
     height: 90px;
 }
 
-/* ============================================ */
-/* SECCIÓN SOBRE NOSOTROS */
-/* ============================================ */
+
+/* -------------------> SECCIÓN SOBRE NOSOTROS <----------------------- */
+
 
 #about {
-    padding: 20px 20px;
+    height: auto;
+    padding: 100px 20px;
+    margin-top: 20px;
+    padding-bottom: 3%;
+}
+
+#about-index{
+    height: 100vh;
+    padding: 5px 20px;
+    margin-top: 20px;
+    padding-bottom: 10px;
 }
 
 .about-container {
@@ -97,12 +116,9 @@ nav .brand-logo img {
     margin: 0 auto;
 }
 
-.about-texto {
-    flex: 1;
-}
 
 .about-texto h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 10px;
     padding: 10px;
     display: inline-block;
@@ -118,29 +134,18 @@ nav .brand-logo img {
     line-height: 1.5;
 }
 
-.about-imagen {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
 
 .about-imagen img {
+    border-radius: 12px;
     width: 100%;
-    height: 150px;
+    height: 28%;
     object-fit: cover;
 }
 
-/* ============================================ */
-/* MISIÓN Y VISIÓN */
-/* ============================================ */
 
-.mision-vision {
-    display: flex;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 50px auto;
-}
+/* -------------------> MISIÓN Y VISIÓN <------------------------ */
+
+
 
 .mision-imagen {
     flex: 1;
@@ -152,9 +157,7 @@ nav .brand-logo img {
     object-fit: cover;
 }
 
-.mision-texto {
-    flex: 1;
-}
+
 
 .mision,
 .vision {
@@ -173,14 +176,14 @@ nav .brand-logo img {
     line-height: 1.5;
 }
 
-/* ============================================ */
-/* SECCIÓN DE SERVICIOS */
-/* ============================================ */
+
+/* -----------------> SECCIÓN DE SERVICIOS <----------------------- */
+
 
 #servicios {
-    margin-top: 40px;
-    margin-bottom: 60px;
-    padding: 5px 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 50px 20px;
 }
 
 #servicios .card {
@@ -216,13 +219,54 @@ nav .brand-logo img {
     justify-content: center;
 }
 
-/* ============================================ */
-/* SECCIÓN DE PLANES */
-/* ============================================ */
+#servicios-index{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    padding: 0px 20px 20px;
+}
+
+#servicios-index .card {
+    min-height: 260px;
+    padding: 10px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#servicios-index .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#servicios-index .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#servicios-index .card-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #222;
+    text-align: justify;
+}
+
+#servicios-index .col {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* --------------------> SECCIÓN DE PLANES <---------------------------- */
+
 
 #planes {
-    padding: 10px 20px;
+    padding: 1px 20px;
     background-color: #f8f9fa;
+    margin-top: 90px;
+    margin-bottom: 50px;
 }
 
 .planes-container {
@@ -232,7 +276,7 @@ nav .brand-logo img {
 }
 
 .planes-container h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 15px;
 }
 
@@ -267,9 +311,9 @@ nav .brand-logo img {
     font-size: 1.2rem;
 }
 
-/* ============================================ */
-/* SECCIÓN DE CONTACTO */
-/* ============================================ */
+
+/* -------------------> SECCIÓN DE CONTACTO <---------------------------- */
+
 
 #contact {
     padding: 50px 20px;
@@ -282,7 +326,7 @@ nav .brand-logo img {
 }
 
 .contact-container h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 15px;
 }
 
@@ -332,17 +376,31 @@ nav .brand-logo img {
     background: #357ABD;
 }
 
-/* ============================================ */
-/* FAQ - PREGUNTAS FRECUENTES */
-/* ============================================ */
+
+/* -----------------> FAQ - PREGUNTAS FRECUENTES <----------------------------- */
+
 
 #faq {
-    padding: 10px 20px;
+    height: auto;
+    padding: 70px 20px ;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 #faq h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#faq-index {
+    height: 84vh;
+    padding: 10px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+#faq-index h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
@@ -350,6 +408,7 @@ nav .brand-logo img {
 
 /* Estilos para Nueva Pregunta */
 #nueva-pregunta {
+    margin-top: 70px;
     padding: 20px 20px;
     background: #f8f9fa;
 }
@@ -380,9 +439,9 @@ nav .brand-logo img {
     font-size: 1rem;
 }
 
-/* ============================================ */
-/* FOOTER */
-/* ============================================ */
+
+/* -------------------->  FOOTER <-----------------------------*/
+
 
 footer {
     background-color: #35373a;

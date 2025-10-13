@@ -27,13 +27,14 @@
         /* Alineo y escalo el logo */
         nav .brand-logo img {
             height: 70px;
-            margin-top: 5px;
+            margin-top: 0;
             vertical-align: middle;
+            width: 95px;
         }
 
     </style>
 </head>
-<body>
+<body class="index-page">
 
     <!-- Navbar responsivo de Materialize -->
     <nav class="nav-wrapper" >
@@ -76,7 +77,7 @@
     </header>
 
     <!-- Sección de "Sobre Nosotros" -->
-    <section id="about">
+    <section id="about-index">
         <div class="about-container">
             <div class="about-texto">
                 <h2>Sobre Nosotros</h2>
@@ -92,7 +93,7 @@
     </section>
 
     <!-- Sección de servicios -->
-    <section id="servicios" class="container">
+    <section id="servicios-index" class="container">
         <h2 class="center-align">Nuestros Servicios</h2>
         <p class="center-align">En KLAN, ofrecemos una amplia gama de servicios para cubrir todas tus necesidades tecnológicas:</p>
 
@@ -156,24 +157,24 @@
     </section>
 
     <!-- Sección de preguntas -->
-    <section id="faq" class="container">
+    <section id="faq-index" class="container">
         <h2 class="center-align">Resolvemos tus dudas</h2>
         <ul class="collapsible">
             <li>
                 <div class="collapsible-header"><i class="material-icons">help_outline</i>¿Qué tipo de proyectos desarrollan?</div>
-                <div class="collapsible-body"><p>Trabajamos en desarrollo web, aplicaciones móviles, integración de sistemas y consultoría tecnológica.</p></div>
+                <div style="background-color: rgb(49, 143, 237); color: rgb(255, 255, 255);" class="collapsible-body"><p>Trabajamos en desarrollo web, aplicaciones móviles, integración de sistemas y consultoría tecnológica.</p></div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="material-icons">schedule</i>¿Cuánto tiempo tarda un proyecto?</div>
-                <div class="collapsible-body"><p>Depende del plan elegido: desde 4 semanas (básico) hasta 12 semanas (enterprise).</p></div>
+                <div style="background-color: rgb(49, 143, 237); color: rgb(255, 255, 255);" class="collapsible-body"><p>Depende del plan elegido: desde 4 semanas (básico) hasta 12 semanas (enterprise).</p></div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="material-icons">build</i>¿Ofrecen soporte después de entregar el proyecto?</div>
-                <div class="collapsible-body"><p>Sí, nuestros planes incluyen soporte y mantenimiento entre 3 y 12 meses.</p></div>
+                <div style="background-color: rgb(49, 143, 237); color: rgb(255, 255, 255);" class="collapsible-body"><p>Sí, nuestros planes incluyen soporte y mantenimiento entre 3 y 12 meses.</p></div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="material-icons">contact_mail</i>¿Cómo puedo contratar un servicio?</div>
-                <div class="collapsible-body"><p>Completa el formulario en la sección de <a href="contact.html">Contacto</a> y nos pondremos en comunicación contigo.</p></div>
+                <div style="background-color: rgb(49, 143, 237); color: rgb(255, 255, 255);" class="collapsible-body"><p>Completa el formulario en la sección de <a href="contact.html">Contacto</a> y nos pondremos en comunicación contigo.</p></div>
             </li>
         </ul>
     </section>
@@ -239,5 +240,7 @@
             M.Collapsible.init(colapsables);
         });
     </script>
+    <!-- Script para navbar con scroll -->
+    <script src="js/navbar-scroll.js"></script>
 </body>
 </html>

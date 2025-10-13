@@ -14,7 +14,7 @@ $(document).ready(function() {
     
     // Validar teléfono (10 dígitos, acepta espacios y guiones)
     function validarTelefono(telefono) {
-        const regex = /^[\d\s\-()]{10,}$/;
+        const regex = /^[\d\s\-()]{10,10}$/;
         return regex.test(telefono);
     }
     
@@ -167,12 +167,6 @@ $(document).ready(function() {
             });
             this.reset();
             M.updateTextFields(); // Actualizar labels de Materialize
-        } else {
-            M.toast({
-                html: 'Por favor corrige los errores en el formulario',
-                classes: 'rounded red',
-                displayLength: 3000
-            });
         }
     });
     
@@ -201,7 +195,7 @@ $(document).ready(function() {
             mostrarError(telefono, 'El teléfono es obligatorio');
             formularioValido = false;
         } else if (!validarTelefono(telefono.val())) {
-            mostrarError(telefono, 'Por favor ingresa un teléfono válido (mínimo 10 dígitos)');
+            mostrarError(telefono, 'Por favor ingresa un teléfono válido (10 dígitos)');
             formularioValido = false;
         } else {
             ocultarError(telefono);
@@ -242,13 +236,7 @@ $(document).ready(function() {
             instancia.open();
             this.reset();
             M.updateTextFields(); // Actualizar labels de Materialize
-        } else {
-            M.toast({
-                html: 'Por favor corrige los errores en el formulario',
-                classes: 'rounded red',
-                displayLength: 3000
-            });
-        }
+        } 
     });
     
 });
