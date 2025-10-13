@@ -1,63 +1,94 @@
+/* ============================================ */
+/* ESTILOS GENERALES */
+/* ============================================ */
+
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
 }
-        
-        
+
+/* ============================================ */
+/* HEADER CON IMAGEN DESENFOCADA */
+/* ============================================ */
+
 header {
     position: relative;
+    overflow: hidden;
     height: 100vh;
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
     color: white;
 }
 
-.logo{
-    width: 90px;
-    height: 90px;
-}
-
-nav {
+header::before {
+    content: '';
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-image: url('../img/fondo_code.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);
+    z-index: -1;
 }
-        
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-        
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-}
-        
+
 .titulo {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    height: 73%;
+    height: 100%;
 }
-        
+
 .titulo h1 {
     font-size: 5rem;
     font-weight: bold;
     text-align: center;
     line-height: 1.2;
 }
-        
+
+/* ============================================ */
+/* NAVBAR */
+/* ============================================ */
+
+nav.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #35373a;
+}
+
+nav::after {
+    content: none !important;
+}
+
+nav .brand-logo img {
+    height: 70px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+}
+
+/* ============================================ */
+/* SECCIÓN SOBRE NOSOTROS */
+/* ============================================ */
+
 #about {
     padding: 20px 20px;
 }
-        
+
 .about-container {
     display: flex;
     gap: 30px;
@@ -65,227 +96,227 @@ nav a {
     max-width: 1200px;
     margin: 0 auto;
 }
-        
+
 .about-texto {
     flex: 1;
 }
-        
+
 .about-texto h2 {
     font-size: 2rem;
     margin-bottom: 10px;
     padding: 10px;
     display: inline-block;
 }
-        
+
 .about-texto h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
-        
+
 .about-texto p {
     font-size: 1rem;
     line-height: 1.5;
 }
-        
+
 .about-imagen {
     flex: 1;
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 15px;
 }
-        
+
 .about-imagen img {
     width: 100%;
     height: 150px;
-    background: #ddd;
     object-fit: cover;
 }
-        
+
+/* ============================================ */
+/* MISIÓN Y VISIÓN */
+/* ============================================ */
+
 .mision-vision {
     display: flex;
     gap: 30px;
     max-width: 1200px;
     margin: 50px auto;
 }
-        
+
 .mision-imagen {
     flex: 1;
 }
-        
+
 .mision-imagen img {
     width: 100%;
     height: 250px;
-    background: #ddd;
     object-fit: cover;
 }
-        
+
 .mision-texto {
     flex: 1;
 }
-        
-.mision, .vision {
+
+.mision,
+.vision {
     margin-bottom: 30px;
 }
-        
-.mision h3, .vision h3 {
+
+.mision h3,
+.vision h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
 }
-        
-.mision p, .vision p {
+
+.mision p,
+.vision p {
     font-size: 1rem;
     line-height: 1.5;
 }
-        
+
+/* ============================================ */
+/* SECCIÓN DE SERVICIOS */
+/* ============================================ */
+
 #servicios {
+    margin-top: 40px;
+    margin-bottom: 60px;
     padding: 5px 20px;
 }
-        
-.servicios-container {
-    max-width: 1200px;
-    margin: 0 auto;
+
+#servicios .card {
+    min-height: 260px;
+    padding: 10px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#servicios .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#servicios .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
     text-align: center;
 }
-        
-.servicios-container h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-        
-.servicios-container > p {
+
+#servicios .card-content p {
     font-size: 1rem;
-    margin-bottom: 40px;
+    line-height: 1.5;
+    color: #222;
+    text-align: justify;
 }
-        
-.servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    text-align: left;
+
+#servicios .col {
+    display: flex;
+    justify-content: center;
 }
-        
-.service-item {
-    padding: 20px;
-}
-        
-.service-number {
-    font-size: 1rem;
-    color: blue;
-    margin-bottom: 10px;
-}
-        
-.service-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-        
-.service-item p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-        
-        /* Sección de Planes */
+
+/* ============================================ */
+/* SECCIÓN DE PLANES */
+/* ============================================ */
+
 #planes {
     padding: 10px 20px;
     background-color: #f8f9fa;
 }
-        
+
 .planes-container {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
-        
+
 .planes-container h2 {
     font-size: 2rem;
     margin-bottom: 15px;
 }
-        
+
 .planes-container > p {
     font-size: 1rem;
     margin-bottom: 40px;
 }
-        
+
 .tabla-planes {
     width: 100%;
     border-collapse: collapse;
     background: white;
     margin: 0 auto;
 }
-        
-.tabla-planes th, .tabla-planes td {
+
+.tabla-planes th,
+.tabla-planes td {
     padding: 15px;
     text-align: left;
     border: 1px solid #ddd;
 }
-        
+
 .tabla-planes th {
     background-color: #4A90E2;
     color: white;
     font-weight: bold;
 }
-        
+
 .precio {
     font-weight: bold;
     color: #4A90E2;
     font-size: 1.2rem;
 }
-        
-.check {
-    color: green;
-    font-weight: bold;
-}
-        
-.no-disponible {
-    color: #ccc;
-}
-        
-        
+
+/* ============================================ */
+/* SECCIÓN DE CONTACTO */
+/* ============================================ */
+
 #contact {
     padding: 50px 20px;
 }
-        
+
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
-        
+
 .contact-container h2 {
     font-size: 2rem;
     margin-bottom: 15px;
 }
-        
+
 .contact-container > p {
     font-size: 1rem;
     margin-bottom: 30px;
 }
-        
+
 .formulario {
     text-align: left;
     background: #f8f9fa;
     padding: 30px;
     border-radius: 8px;
 }
-        
+
 .campo {
     margin-bottom: 20px;
 }
-        
+
 .campo label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
-        
-.campo input, .campo input[type="file"] {
+
+.campo input,
+.campo input[type="file"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
 }
-        
+
 .boton-enviar {
     background: #4A90E2;
     color: white;
@@ -296,10 +327,62 @@ nav a {
     cursor: pointer;
     width: 100%;
 }
-        
+
 .boton-enviar:hover {
     background: #357ABD;
 }
+
+/* ============================================ */
+/* FAQ - PREGUNTAS FRECUENTES */
+/* ============================================ */
+
+#faq {
+    padding: 10px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#faq h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para Nueva Pregunta */
+#nueva-pregunta {
+    padding: 20px 20px;
+    background: #f8f9fa;
+}
+
+#nueva-pregunta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#nueva-pregunta p {
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+#nueva-pregunta .formulario {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#nueva-pregunta textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/* ============================================ */
+/* FOOTER */
+/* ============================================ */
 
 footer {
     background-color: #35373a;
@@ -321,7 +404,8 @@ footer {
     color: #4A90E2;
 }
 
-.footer-section p, .footer-section li {
+.footer-section p,
+.footer-section li {
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 8px;
@@ -349,7 +433,7 @@ footer {
     color: #bdc3c7;
 }
 
-.footer-icon{
+.footer-icon {
     width: 25px;
     height: 25px;
 }
@@ -374,211 +458,4 @@ footer {
 
 .links a:hover {
     background-color: #357ABD;
-}
-
-.nav-secondary a{
-    color: #35373a;
-}
-
-.nav-secondary a:hover{
-    color: #921db5;
-}
-
-#faq {
-    padding: 10px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-        #faq h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        text-align: center;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .faq-question {
-            background: #4A90E2;
-            color: white;
-            padding: 15px 20px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .faq-question:hover {
-            background: #357ABD;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 20px;
-            background: #f9f9f9;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 15px 20px;
-        }
-
-        /* Estilos Sección Nueva Pregunta*/
-        #nueva-pregunta {
-            padding: 20px 20px;
-            background: #f8f9fa;
-        }
-
-        #nueva-pregunta h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        #nueva-pregunta p {
-            margin-bottom: 25px;
-            font-size: 1rem;
-        }
-
-        #nueva-pregunta .formulario {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        #nueva-pregunta textarea {
-            width: 100%;
-            resize: vertical;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-        }
-
-/* ==================================== */
-/* CORRECCIÓN FINAL NAVBAR Y ESPACIADO */
-/* ==================================== */
-
-/* Navbar fija, sin líneas blancas ni sombras */
-nav.nav-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  border: none !important;
-  box-shadow: none !important;
-  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
-}
-
-/* Evita la pseudo-línea de Materialize */
-nav::after {
-  content: none !important;
-}
-
-/* Ajusta el contenido para que no quede tapado */
-body {
-  margin: 0;
-  padding-top: 90px; /* espacio exacto debajo del navbar */
-  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
-}
-
-/* Ajusta el logo dentro del nav */
-nav .brand-logo img {
-  height: 70px;
-  margin-top: 5px;
-  vertical-align: middle;
-}
-
-/* El header mantiene su alineación vertical centrada */
-header .titulo {
-  padding-top: 30px;
-}
-
-/* ==================================== */
-/* Estilo mejorado para "Nuestros Servicios" */
-/* ==================================== */
-
-#servicios {
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-
-/* Cada tarjeta tiene más espacio y altura flexible */
-#servicios .card {
-  min-height: 260px;
-  padding: 10px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Aumenta el tamaño del título y mejora la lectura */
-#servicios .card-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #333;
-  display: block;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Párrafo más legible y centrado */
-#servicios .card-content p {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #222;
-  text-align: justify;
-}
-
-/* Alinea las tarjetas en el centro del grid */
-#servicios .col {
-  display: flex;
-  justify-content: center;
-}
-
-/* Efecto hover sutil para resaltar cada servicio */
-#servicios .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-#servicios .card {
-  height: auto !important;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* Asegura que el texto no se oculte */
-#servicios .card-content {
-  overflow: visible !important;
-  height: auto !important;
-  max-height: none !important;
-}
-
-/* Espaciado y legibilidad del texto */
-#servicios .card-content p {
-  line-height: 1.5;
-  text-align: justify;
-  margin: 0;
-  font-size: 1rem;
-}
-
-/* Ajuste del título dentro de la tarjeta */
-#servicios .card-title {
-  margin-bottom: 10px;
-  display: block;
-  text-align: center;
 }
