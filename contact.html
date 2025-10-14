@@ -154,28 +154,34 @@
     <script src="js/validaciones.js"></script>
 
     <!-- Script para inicializar los componentes -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Activo el menú lateral en móviles
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems);
+    <script>document.addEventListener('DOMContentLoaded', function() {
+    // Activo el menú lateral en móviles
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
 
-            // Activo el modal de Materialize
-            var modal = document.querySelectorAll('.modal');
-            M.Modal.init(modal);
+    // Activo el modal de Materialize
+    var modal = document.querySelectorAll('.modal');
+    M.Modal.init(modal);
 
-            // Evento para mostrar el modal al enviar el formulario
-            const form = document.getElementById('form-contacto');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault(); // evita que se recargue la página
-                const instancia = M.Modal.getInstance(document.getElementById('modal-confirmacion'));
-                instancia.open(); // abre el modal
-                form.reset(); // limpia el formulario
-            });
+    // Evento para mostrar el modal al enviar el formulario
+    const form = document.getElementById('form-contacto');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // ✅ evita que se dispare el envío antes del modal
 
-            // Inicializa todo lo demás automáticamente
-            M.AutoInit();
-        });
+        // Mostrar modal de confirmación
+        const instancia = M.Modal.getInstance(document.getElementById('modal-confirmacion'));
+        instancia.open();
+
+        // Enviar al PHP después de 1 segundo
+        setTimeout(() => {
+            form.submit(); // ✅ ahora sí envía al servidor
+        }, 1000);
+    });
+
+    // Inicializa todo lo demás automáticamente
+    M.AutoInit();
+});
+
     </script>
 
 </body>
