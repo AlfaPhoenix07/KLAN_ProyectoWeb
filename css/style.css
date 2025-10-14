@@ -90,6 +90,27 @@ nav .brand-logo img {
     height: 90px;
 }
 
+/* Corrección para el sidenav en móviles */
+.sidenav {
+    z-index: 1001 !important; /* Mayor que el navbar (1000) */
+    top: 0 !important;
+}
+
+/* Asegurar que el overlay también esté encima */
+.sidenav-overlay {
+    z-index: 1000 !important;
+}
+
+/* Ajustar el padding del primer item del sidenav para que no quede detrás del navbar */
+.sidenav li:first-child {
+    margin-top: 0px;
+}
+
+/* Opcional: agregar un poco de padding arriba del sidenav */
+.sidenav {
+    padding-top: 0;
+}
+
 
 /* -------------------> SECCIÓN SOBRE NOSOTROS <----------------------- */
 
@@ -517,4 +538,370 @@ footer {
 
 .links a:hover {
     background-color: #357ABD;
+}
+
+/* -----------------> MEDIA QUERIES PARA MÓVILES <----------------------- */
+
+/* Para pantallas pequeñas (móviles en vertical) - 600px o menos */
+@media only screen and (max-width: 600px) {
+    
+    /* ===== NAVBAR ===== */
+    nav .brand-logo img {
+        height: 50px !important;
+    }
+    
+    .logo {
+        width: 70px !important;
+        height: 60px !important;
+    }
+    
+    /* ===== HEADER ===== */
+    header {
+        height: 70vh;
+    }
+    
+    .titulo h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.1;
+        padding: 0 15px;
+    }
+    
+    /* ===== SECCIONES GENERALES ===== */
+    section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .container {
+        width: 95% !important;
+    }
+    
+    /* ===== SOBRE NOSOTROS ===== */
+    #about-index {
+        height: auto;
+        padding: 60px 0 30px !important;
+    }
+    
+    #about {
+        padding: 80px 0 30px !important;
+    }
+    
+    .about-texto h2 {
+        font-size: 2rem !important;
+        padding: 10px 0;
+    }
+    
+    .about-texto h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    .about-texto p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+    
+    .about-imagen img {
+        margin-bottom: 10px;
+        height: 150px !important;
+    }
+    
+    /* ===== MISIÓN Y VISIÓN ===== */
+    .mision, .vision {
+        margin-bottom: 20px;
+    }
+    
+    .mision h3, .vision h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .mision p, .vision p {
+        font-size: 0.9rem;
+    }
+    
+    /* ===== SERVICIOS ===== */
+    #servicios, #servicios-index {
+        padding: 60px 0 30px !important;
+        margin-top: 0 !important;
+    }
+    
+    #servicios h2, #servicios-index h2 {
+        font-size: 2rem !important;
+        margin-bottom: 10px;
+    }
+    
+    #servicios .card, #servicios-index .card {
+        min-height: auto !important;
+        margin-bottom: 15px;
+    }
+    
+    #servicios .card-title, #servicios-index .card-title {
+        font-size: 1.1rem !important;
+    }
+    
+    #servicios .card-content p, #servicios-index .card-content p {
+        font-size: 0.9rem;
+    }
+    
+    /* ===== PLANES ===== */
+    #planes {
+        padding: 70px 0 30px !important;
+        margin-top: 0 !important;
+    }
+    
+    .planes-container h2 {
+        font-size: 2rem !important;
+    }
+    
+    .planes-container > p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+    
+    /* Tabla responsiva */
+    .responsive-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table.highlight {
+        font-size: 0.75rem !important;
+    }
+    
+    table.highlight th,
+    table.highlight td {
+        padding: 8px 4px !important;
+        white-space: nowrap;
+    }
+    
+    table.highlight th {
+        font-size: 0.8rem !important;
+    }
+    
+    .precio {
+        font-size: 0.9rem !important;
+    }
+    
+    /* ===== CONTACTO / FORMULARIOS ===== */
+    #contact, #nueva-pregunta {
+        padding: 70px 0 30px !important;
+    }
+    
+    .contact-container h2 {
+        font-size: 2rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .contact-container > p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+    
+    .formulario {
+        padding: 20px 15px !important;
+        margin: 0 !important;
+    }
+    
+    /* Inputs más grandes para evitar zoom en iOS */
+    .input-field input,
+    .input-field textarea,
+    .materialize-textarea {
+        font-size: 16px !important;
+    }
+    
+    .input-field label {
+        font-size: 0.9rem;
+    }
+    
+    /* Botones */
+    .btn {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+    
+    /* ===== FAQ / PREGUNTAS ===== */
+    #faq, #faq-index {
+        padding: 70px 0 30px !important;
+        height: auto !important;
+    }
+    
+    #faq h2, #faq-index h2 {
+        font-size: 2rem !important;
+    }
+    
+    .collapsible-header {
+        font-size: 0.9rem !important;
+        padding: 12px !important;
+    }
+    
+    .collapsible-header i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .collapsible-body p {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+        padding: 30px 15px 15px !important;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .footer-section p,
+    .footer-section li {
+        font-size: 0.85rem !important;
+    }
+    
+    .footer-icon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    
+    .links {
+        justify-content: center !important;
+    }
+    
+    .links a {
+        width: 32px !important;
+        height: 32px !important;
+        line-height: 32px !important;
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom {
+        font-size: 0.75rem !important;
+        padding: 15px 10px 0 !important;
+    }
+    
+    .footer-bottom p {
+        line-height: 1.4;
+    }
+}
+
+/* Para pantallas MUY pequeñas (320px - 375px) - móviles antiguos */
+@media only screen and (max-width: 375px) {
+    
+    .titulo h1 {
+        font-size: 2rem !important;
+    }
+    
+    .logo {
+        width: 60px !important;
+        height: 55px !important;
+    }
+    
+    nav .brand-logo img {
+        height: 45px !important;
+    }
+    
+    .about-texto h2,
+    .contact-container h2,
+    #servicios h2,
+    #planes h2,
+    #faq h2 {
+        font-size: 1.7rem !important;
+    }
+    
+    table.highlight {
+        font-size: 0.7rem !important;
+    }
+    
+    table.highlight th,
+    table.highlight td {
+        padding: 6px 3px !important;
+    }
+    
+    .formulario {
+        padding: 15px 10px !important;
+    }
+    
+    .btn {
+        font-size: 0.85rem !important;
+        padding: 0 10px !important;
+        height: 42px !important;
+        line-height: 42px !important;
+    }
+}
+
+/* Para pantallas medianas (tablets en vertical) - 601px a 768px */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    
+    .titulo h1 {
+        font-size: 3.5rem !important;
+    }
+    
+    #about-index {
+        height: auto;
+        padding: 70px 0 40px;
+    }
+    
+    .about-texto h2 {
+        font-size: 2.5rem !important;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Para tablets en horizontal - 769px a 992px */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    
+    .titulo h1 {
+        font-size: 4rem !important;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Ajustes adicionales para asegurar que nada se salga del viewport */
+@media only screen and (max-width: 600px) {
+    
+    /* Evitar scroll horizontal */
+    body {
+        overflow-x: hidden !important;
+    }
+    
+    /* Asegurar que las imágenes no se salgan */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Evitar que el texto se salga */
+    * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Cards con padding más pequeño */
+    .card {
+        margin: 0.5rem 0 !important;
+    }
+    
+    .card .card-content {
+        padding: 15px !important;
+    }
+    
+    /* Modal más pequeño en móviles */
+    .modal {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
 }
