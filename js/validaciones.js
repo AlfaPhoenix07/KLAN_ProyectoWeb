@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     
     // Validar que un campo no esté vacío
@@ -116,7 +115,6 @@ $(document).ready(function() {
     });
     
     //  -- VALIDACIÓN AL ENVIAR FORMULARIO DE PREGUNTAS -- 
-    
     $('#nueva-pregunta .formulario').on('submit', function(e) {
         e.preventDefault();
         
@@ -158,20 +156,20 @@ $(document).ready(function() {
             ocultarError(pregunta);
         }
         
-        // Si todo es válido, mostrar mensaje de éxito
+        // Si todo es válido, mostrar mensaje y enviar al PHP
         if (formularioValido) {
             M.toast({
-                html: '¡Pregunta enviada con éxito! Te responderemos pronto.',
+                html: '¡Pregunta enviada con éxito! Procesando en servidor...',
                 classes: 'rounded green',
-                displayLength: 4000
+                displayLength: 1500
             });
-            this.reset();
-            M.updateTextFields(); // Actualizar labels de Materialize
+            setTimeout(() => {
+                e.currentTarget.submit(); // envío real al PHP
+            }, 1500);
         }
     });
     
     // ========== VALIDACIÓN AL ENVIAR FORMULARIO DE CONTACTO ==========
-    
     $('#form-contacto').on('submit', function(e) {
         e.preventDefault();
         
@@ -230,13 +228,16 @@ $(document).ready(function() {
             ocultarError($(this).find('.file-path'));
         }
         
-        // Si todo es válido, abrir modal
+        // Si todo es válido, mostrar modal y enviar al PHP
         if (formularioValido) {
-            const instancia = M.Modal.getInstance(document.getElementById('modal-confirmacion'));
-            instancia.open();
-            this.reset();
-            M.updateTextFields(); // Actualizar labels de Materialize
-        } 
+            M.toast({
+                html: '¡Formulario enviado! Procesando en servidor...',
+                classes: 'rounded green',
+                displayLength: 1500
+            });
+            setTimeout(() => {
+                e.currentTarget.submit(); // envío real al PHP
+            }, 1500);
+        }
     });
-    
 });

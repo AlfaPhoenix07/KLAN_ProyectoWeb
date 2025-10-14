@@ -82,7 +82,7 @@
             <p class="center-align">Envíanos tu duda y la responderemos lo antes posible.</p>
 
             <!-- Formulario con estilo de Materialize -->
-            <form class="formulario">
+            <form class="formulario" action="procesar_preguntas.php" method="POST">
                 <div class="input-field">
                     <input type="text" id="nombre" name="nombre" required>
                     <label for="nombre">Tu nombre *</label>
@@ -159,6 +159,7 @@
 
     <!-- Script para inicializar los componentes -->
     <!-- Script para inicializar los componentes -->
+<!-- Script para inicializar los componentes -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Activo el menú lateral en móviles
@@ -169,25 +170,10 @@
         var collapsibles = document.querySelectorAll('.collapsible');
         M.Collapsible.init(collapsibles);
 
-        // Capturar el formulario de nueva pregunta
-        const formulario = document.querySelector('#nueva-pregunta .formulario');
-        
-        if (formulario) {
-            formulario.addEventListener('submit', function(e) {
-                e.preventDefault(); // Evita que se recargue la página
-                
-                // Mostrar mensaje de confirmación
-                M.toast({
-                    html: '¡Pregunta enviada! Nos pondremos en contacto contigo pronto.',
-                    classes: 'rounded green',
-                    displayLength: 4000
-                });
-                
-                // Limpiar el formulario
-                formulario.reset();
-            });
-        }
+        // ✅ Se elimina la parte que detenía el envío del formulario
+        //    Ya no hay e.preventDefault(), así que el PHP se ejecuta correctamente.
     });
 </script>
+
 </body>
 </html>     
