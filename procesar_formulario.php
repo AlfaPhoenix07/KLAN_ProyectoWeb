@@ -1,43 +1,45 @@
 <?php
+// =============================================
+// procesar_formulario.php
+// Archivo PHP que recibe los datos del formulario de contacto
+// =============================================
 
-// Este script recibe los datos del formulario de contact.html
-// y muestra una confirmación simple para cumplir el requisito
-// de procesamiento en PHP puro (sin base de datos todavía).
+// Verificar si se envió el formulario por POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    // Limpieza básica de variables
-    $nombre   = htmlspecialchars($_POST['nombre'] ?? '');
+    // Recibir los datos del formulario
+    $nombre  = htmlspecialchars($_POST['nombre'] ?? '');
+    $correo  = htmlspecialchars($_POST['correo'] ?? '');
     $telefono = htmlspecialchars($_POST['telefono'] ?? '');
-    $correo   = htmlspecialchars($_POST['correo'] ?? '');
-    $mensaje  = "Solicitud enviada correctamente.";
+    
+    // Verificar si se subió un archivo
+    $archivoNombre = '';
+    if (isset($_FILES['cv']) && $_FILES['cv']['error'] == UPLOAD_ERR_OK) {
+        $archivoNombre = $_FILES['cv']['name'];
+        $rutaDestino = 'uploads/' . basename($archivoNombre);
 
-    // Validaciones simples del lado del servidor
-    if (empty($nombre) || empty($telefono) || empty($correo)) {
-        $mensaje = "⚠️ Faltan datos obligatorios.";
+        // Crear carpeta si no existe
+        if (!is_dir('uploads')) {
+            mkdir('uploads', 0777, true);
+        }
+
+        // Mover archivo temporal a la carpeta destino
+        move_uploaded_file($_FILES['cv']['tmp_name'], $rutaDestino);
     }
 
-    // Mostrar respuesta al usuario
-    echo "<!DOCTYPE html>
-    <html lang='es'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Confirmación de envío - KLAN</title>
-        <link href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css' rel='stylesheet'>
-    </head>
-    <body style='padding: 40px; background-color: #f8f9fa;'>
-        <div class='container'>
-            <h3 style='color:#4A90E2;'>Formulario procesado en PHP</h3>
-            <p><b>Nombre:</b> {$nombre}</p>
-            <p><b>Teléfono:</b> {$telefono}</p>
-            <p><b>Correo:</b> {$correo}</p>
-            <div class='card-panel blue lighten-4' style='margin-top:20px;'>
-                <b>{$mensaje}</b>
-            </div>
-            <a href='contact.html' class='btn blue'>Regresar</a>
-        </div>
-    </body>
-    </html>";
+    // Mostrar los datos enviados
+    echo "<h2>¡Solicitud enviada correctamente!</h2>";
+    echo "<p><b>Nombre:</b> $nombre</p>";
+    echo "<p><b>Correo:</b> $correo</p>";
+    echo "<p><b>Teléfono:</b> $telefono</p>";
+    
+    if ($archivoNombre) {
+        echo "<p><b>Archivo recibido:</b> $archivoNombre</p>";
+    } else {
+        echo "<p><b>Archivo:</b> No se adjuntó archivo.</p>";
+    }
+
+} else {
+    echo "<h3>No se recibieron datos del formulario.</h3>";
 }
 ?>
